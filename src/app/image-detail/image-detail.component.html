@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="photo"><pre>{{photo?.photoString}}</pre></div>
+  <div class="photo-info">
+    <mat-list>
+      <mat-list-item><b>Description:</b>{{photo?.description}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Date:</b>{{ photo?.date }} </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Location:</b>{{photo?.location}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Tags:</b>{{photo?.tags}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Favorite:</b>
+        <a (click)="onFav($event)">
+          <mat-icon [attr.data-id]=id *ngIf="photo?.isFav; else elseBlock">
+            favorite
+          </mat-icon>
+          <ng-template #elseBlock>
+            <mat-icon [attr.data-id]=id>
+              favorite_border
+            </mat-icon>
+          </ng-template>
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <button mat-raised-button color="warn" (click)="onDelete($event)">Delete Photo</button>
+
+  <app-image-comments></app-image-comments>
+</div>

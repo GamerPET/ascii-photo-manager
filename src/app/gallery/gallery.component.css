@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, min(300px));
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-icon {
+  color: red;
+  cursor: pointer;
+}
+
+mat-action-row {
+  margin-top: auto;
+}
+
+pre {
+  font-size: 0.3rem;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+a:hover {
+  color: #673AB7;
+}

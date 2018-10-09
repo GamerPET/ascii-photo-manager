@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo {
+  margin-top: 50px;
+  width: 600px;
+  height: 300px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-info {
+  width: 600px;
+  background-color: #ECD4FC;
+}
+
+mat-icon {
+  color: red;
+  cursor: pointer;
+}
+
+pre {
+  font-size: 0.5rem;
+}

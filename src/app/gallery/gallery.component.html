@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <mat-card *ngFor="let photo of photos | async; let i = index" [attr.data-index]="i">
+    <a routerLink="/image-detail/{{photo.id}}">
+      <mat-card-content><pre>{{photo.photoString}}</pre></mat-card-content>
+    </a>
+    <mat-action-row>
+      <a (click)="onFav($event)">
+        <mat-icon [attr.data-id]=photo.id *ngIf="photo.isFav; else elseBlock">
+          favorite
+        </mat-icon>
+        <ng-template #elseBlock>
+          <mat-icon [attr.data-id]=photo.id>
+            favorite_border
+          </mat-icon>
+        </ng-template>
+      </a>
+    </mat-action-row>
+  </mat-card>
+</div>

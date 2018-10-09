@@ -1,0 +1,37 @@
+.container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: minmax(auto, 600px);
+}
+
+h2 {
+  color: #673AB7;
+  font-size: 1.5rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.comments-list {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: minmax(auto, 600px);
+  grid-gap: 20px;
+}
+
+.comment {
+  padding: 10px 5px;
+  border: 1px solid #673AB7;
+  border-radius: 6px;
+  display: flex;
+}
+
+.deleteBtn {
+  margin-left: auto;
+}
+
+.comment-date {
+  font-size: 0.6em;
+  color: #888888;
+}

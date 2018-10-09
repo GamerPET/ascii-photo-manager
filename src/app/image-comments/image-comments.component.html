@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="add-new-comment">
+    <h2>Add Comment</h2>
+    <form (ngSubmit)="onSubmit()" #addCommentForm="ngForm">
+      <mat-form-field>
+        <textarea rows="5" matInput placeholder="Your Comment" [formControl]="fcComment"></textarea>
+        <mat-error *ngIf="fcComment.hasError('required')">
+          Comment is <strong>required</strong>!
+        </mat-error>
+      </mat-form-field>
+      <mat-action-row>
+        <button mat-raised-button color="primary">Add Comment</button>
+      </mat-action-row>
+    </form>
+  </div>
+  <div class="comments-list">
+    <div class="comment" *ngFor="let comment of comments | async;" [attr.data-id]=comment.id>
+      <div>
+        {{comment.comment}}
+        <div class="comment-date">{{comment.date.toDate() | date: 'medium'}}</div>
+      </div>
+
+      <button mat-mini-fab color="warn" class="deleteBtn" (click)="deleteComment($event)">X</button>
+    </div>
+  </div>
+  <ng-template #noComments>
+    There are no comments! Why don't you add one?
+  </ng-template>
+</div>

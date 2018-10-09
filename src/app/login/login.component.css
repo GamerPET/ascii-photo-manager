@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+mat-card {
+  display: grid;
+  grid-template-columns: minmax(auto, 300px);
+  justify-items: center;
+}
+
+mat-card-actions {
+  display: grid;
+  justify-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-icon {
+  cursor: pointer;
+}

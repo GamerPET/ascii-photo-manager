@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+mat-card {
+  display: grid;
+  grid-template-columns: minmax(auto, 400px);
+  justify-items: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+mat-card-actions {
+  display: grid;
+  justify-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-datepicker-toggle {
+  font-size: 1.5rem;
+}

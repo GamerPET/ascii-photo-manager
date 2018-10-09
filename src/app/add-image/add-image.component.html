@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title><h2>Add New Photo</h2></mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="full-width">
+      <form (ngSubmit)="onSubmit()" #addPhotoForm="ngForm">
+        <mat-form-field>
+          <textarea rows="10" matInput placeholder="The Actual Photo" [formControl]="photoString">
+          </textarea>
+          <mat-error *ngIf="photoString.hasError('required')">
+            Photo is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Description" [formControl]="description">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="dp3" placeholder="Date" [formControl]="date">
+          <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+          <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Location" [formControl]="location">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Tags" [formControl]="tags">
+        </mat-form-field>
+        <mat-card-actions>
+          <button type="submit" mat-raised-button color="primary">Upload Photo</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
